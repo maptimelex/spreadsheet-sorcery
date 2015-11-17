@@ -16,19 +16,26 @@
 <!-- Main HTML structure -->
     <div id="wrapper">
         <h1>Lexington Area Beer Establishments</h1>
+        
+        <!-- info pane for our selected beer place and the map -->
         <div class="container">
             <div id="infoPane">
+                <!-- This looks empty but we'll use a template with same ID to populate it! -->
                 <div id="selectedBeer"></div>
             </div>
             <div id="map"></div>
         </div>
+
+        <!-- Table, table filter, and associated buttons -->
         <div class="container">
             <input id="tableFilter" type="text" placeholder="filter by.."></input>
-            <span class="clear button">Clear</span> <span class="resetMap button">Reset Map</span>
+            | <span class="clear">Clear</span> | <span class="resetMap">Reset Map</span> |
+            <br>
             <span class="noMatches">no matches</span>
+            <!-- This looks empty but we'll use a template with same ID to populate it! -->
             <div id="beerTable"></div>
         </div>
-        <!-- Maybe put something here with info... -->
+        <!-- Some info about our map, where it came from, data attribution, etc. -->
         <div id="info" class="container">
             <h3>About the map</h3>
             <p>Data for this map were collected from <a href="http://www.lexbeerscene.com/" target="_blank">LexBeerScene.com's</a> directory of <a href="http://www.lexbeerscene.com/localestablishments" target="_blank">local beer establishments</a>. You can access the Google Spreadsheet of the data <a href="https://docs.google.com/spreadsheets/d/13Xd93PIiGvGh2JQ6uygnsUTTLAlJu7F7TE-doTy-5OY/edit#gid=1993162178" target="_blank">here</a></p>
@@ -38,16 +45,7 @@
     </div><!-- end wrapper -->
 
 <!-- Handlebar templates -->
-    <!-- Table -->
-    <script id="beerTable" type="text/html">
-        <table>
-            <tr><th class="tHeader">Name</th><th class="tHeader">City</th><th class="tHeader">Type</th></tr>
-            {{#rows}}
-                <tr id="{{rowNumber}}" class="beerRow"><td>{{name}}</td><td>{{city}}</td><td>{{type}}</td></tr>
-            {{/rows}}
-        </table>
-    </script>
-        
+
     <!-- Info pane for selected spot -->
     <script id="selectedBeer" type="text/html">
         {{#rows}}
@@ -63,7 +61,18 @@
                 {{#food}}<li><span class="category">Food ?:</span> {{food}}</li>{{/food}}
             </ul>
         {{/rows}}
-    </script>  
+    </script> 
+
+    <!-- Table -->
+    <script id="beerTable" type="text/html">
+        <table>
+            <tr><th class="tHeader">Name</th><th class="tHeader">City</th><th class="tHeader">Type</th></tr>
+            {{#rows}}
+                <tr id="{{rowNumber}}" class="beerRow"><td>{{name}}</td><td>{{city}}</td><td>{{type}}</td></tr>
+            {{/rows}}
+        </table>
+    </script>
+         
 
     <!-- Libraries -->
     <script type="text/javascript" src='js/jquery.js '></script>
