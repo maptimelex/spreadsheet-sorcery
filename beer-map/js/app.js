@@ -49,10 +49,12 @@ function showInfo(gData) {
     // We'll also create a popup that will show extra information for the clicked location
     markerLayer = L.geoJson(geoJSON,{
         pointToLayer: function(feature,latlng) {
-            // Beer by Fabián Sanabria from the Noun Project
             var featureIcon = L.icon({
+                // Beer by Fabián Sanabria from the Noun Project
                 iconUrl:'img/beer.png',
+                // Set icon size
                 iconSize: [18,18],
+                // Offset the popup we'll add so it doesn't cover the marker
                 popupAnchor: [0, -9]
             })
             var marker = L.marker(latlng,{
@@ -71,7 +73,7 @@ function showInfo(gData) {
     map.fitBounds(markerLayer.getBounds())
 
     // Use jQuery w/ Sheetsee so that when you click on a place in the table, the map zooms to the location and the infopane updates
-    $('.beerRow').live("click", function(event) {
+    $('.beerRow').on("click", function(event) {
         // Clear the styling in the table for the previously selected row
         $('.beerRow').removeClass("selectedRow")
         // Select the row of the location clicked in the table
