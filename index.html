@@ -63,13 +63,53 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <h1>Spreadsheet Sorcery: Making a map with SheetseeJS &amp; Google Spreadsheets</h1>
-                <p>Listed below are the seven example maps from our November 2015 maptime meetup. Each map is meant to progressively increase in functionality. Files that are changed are listed. We encourage you to explore the changed files at each step as the they are commented with helpful attempts to explain what is going with the new feature added. Of course, feel free to <a href="https://github.com/maptimelex/spreadsheet-sorcery" target="_blank">peruse the whole repo on GitHub</a> where all the files listed here are stored.</p>
+                <p>For the November 2015 meetup we learned how to make map pulling feature data from a Google Spreadsheet. This page is meant to help you walk through the process of making a map of Lexington-area beer establishments as compiled in <a href="http://www.lexbeerscene.com/localestablishments">this list</a> by <a href="http://www.lexbeerscene.com/">LexBeerScene.com</a></p>
+                <h3>What we'll make</h3>
+                <hr>
+                <div class="container">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <img src="assets/img/beer-map-demo.gif" alt="beer map demo" width="600">
+                    <a href="http://maptimelex.github.io/spreadsheet-sorcery/beer-map">Live Demo</a>
+                </div>
+                <div class="col-sm-3"></div>
+                </div>
+                <h3>What we'll be using</h3>
+                <hr>
+                <div class="list-group">
+                    <h4 class="list-group-item-heading">Backend</h4>
+                    <ul class="list-group setup-list">
+                        <li class="list-group-item"><a href="https://www.google.com/sheets/about/">Google Spreadsheets</a></li>
+                        <li class="list-group-item"><a href="https://docs.google.com/spreadsheets/d/13Xd93PIiGvGh2JQ6uygnsUTTLAlJu7F7TE-doTy-5OY/edit?usp=sharing">LexBeerScene Spreadsheet</a></li>
+                    </ul>
+                    <h4 class="list-group-item-heading">Frontend</h4>
+                    <ul class="list-group setup-list">
+                        <li class="list-group-item"><a href="https://www.mapbox.com/mapbox.js/api/">mapboxJS</a>/<a href="http://leafletjs.com/">LeafletJS</a> - Setting up map and map interaction</li>
+                        <li class="list-group-item"><a href="http://jlord.us/sheetsee.js/">SheetseeJS</a> - Pulling data from Google Spreadsheets, transforming data to GeoJSON, data driven templates
+                            <ul class="list-group setup-list">
+                                <li class="list-group-item"><a href="https://github.com/jsoma/tabletop">TabletopJS</a> - Pull the data from the Google Spreadsheet</li>
+                                <li class="list-group-item"><a href="http://handlebarsjs.com/">HandlebarsJS</a> - Templates for our table and info pane</li>
+                                <li class="list-group-item"><a href="http://icanhazjs.com/">ICanHazJS</a> - Mediates moving the data pulled from Google Spreadsheets into a Handlebars template</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item"><a href="http://jquery.com/">jQuery</a> - Interaction</li>
+                    </ul>
+                </div>
+                <div class="container">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <img src="assets/img/anatomy4.jpg" alt="our map's architecture" width="600">
+                    Adapted from "Anatomy of Webmap"
+                </div>
+                <div class="col-sm-3"></div>
+                </div>
                 <h3>Setting up</h3>
                 <hr>
                 <div class="list-group">
                     <h4 class="list-group-item-heading">Download project files</h4>
-                    <p class="list-group-item-text">Either clone the project <a href="https://github.com/maptimelex/spreadsheet-sorcery"></a><b>spreadsheet-sorcery</b></a> repo or download it as a ZIP. If you do the latter, you'll need to unzip the project file.</p>
-                    <br>
+                    <ul class="list-group setup-list">
+                        <li class="list-group-item">Either clone the project <a href="https://github.com/maptimelex/spreadsheet-sorcery"><b>spreadsheet-sorcery</b></a> repo or download it as a ZIP. If you do the latter, you'll need to unzip the project file.</li>
+                    </ul>
                     <h4 class="list-group-item-heading">Start up a local server</h4>
                     <ol class="list-group setup-list">
                         <li class="list-group-item">If you don't have it, download <a href="https://www.python.org/downloads/">Python 2.7.x</a></li>
@@ -77,9 +117,9 @@
                         <li class="list-group-item">Navigate to the directory where you saved the project files</li>
                         <li class="list-group-item">Start local server: <pre>python -m SimpleHTTPServer</pre></li>
                         <li class="list-group-item">In your browser, navigate to: <pre>localhost:8000</pre> You'll use this to navigate around the various stages of the project we're working with.</li>
-                    </ol>   
+                    </ol>  
+                    <p><b>Note: </b>We recommend using the versions of the various JavaScript libraries included in the project repo. We've had some trouble getting everything to work with the most up-to-date versions of these libaries.</p> 
                 </div>
-
                 <h3>Steps</h3>
                 <hr>
                 <div class="list-group">                 
