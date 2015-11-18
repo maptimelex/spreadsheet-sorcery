@@ -26,7 +26,16 @@ p>a, p>a:hover {
 	color: #cdcdcd;
 }
 
-a.list-group-item {
+.setup-list>li {
+	list-style: decimal inside;
+	color: white; 
+}
+
+.setup-list>li>a{
+	color:#f1c40f;
+}
+
+a.list-group-item, .setup-list>li {
 	background-color: transparent;
 	border-color: transparent;
 	border-radius: 4px;
@@ -42,7 +51,6 @@ a.list-group-item .list-group-item-heading {
 a.list-group-item:hover .list-group-item-heading {
 	color: #005daa;
 }
-
 
 
 	
