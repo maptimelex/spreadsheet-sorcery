@@ -1,0 +1,155 @@
+/* Page Specific CSS */
+
+body {
+	font-family: "Comic Sans MS", Arial, sans-serif; 
+	background: #343434; 
+	color: whitesmoke; 
+	font-size: 12px; 
+	margin: 0px; 
+	padding: 20px 20px 20px 20px;
+}
+
+a, .clear, .resetMap {
+	color: #2196F3;
+}
+
+a:hover, .clear:hover, .resetMap:hover {
+	color: #1DE9B6;
+}
+
+a.button {
+	border: none;
+}
+
+#wrapper {
+	margin: 0px auto; 
+	max-width: 900px; 
+}
+
+#map {
+	height: 400px; 
+	max-width: 530px; 
+	min-width: 300px; 
+	background: #DADADA;
+}
+
+.container {
+	margin: 24px 0px;
+}
+#tableFilter { 
+	color: #343434; 
+}
+
+.noMatches {
+	font-style: italic;
+}
+
+.clear, .resetMap {
+	cursor: pointer;
+}
+
+/*Popup style for features in map*/
+.leaflet-popup-content {
+	font-family: "Comic Sans MS", Arial, sans-serif;
+	color: whitesmoke;
+}
+.leaflet-popup-content, .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	background-color: #343434;
+}
+.leaflet-popup-content h2 {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.leaflet-popup-content img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Info pane style*/
+#infoPane {
+	height: 400px; 
+	max-width: 350px; 
+	width: 100%; 
+	float: right; 
+	padding-top: 5px;
+}
+#selectedBeer {
+	display: none;
+}
+#selectedBeer ul {
+	list-style: none; 
+	margin-top: 12px 0px; 
+	padding: 0px;
+}
+.category {
+	font-size:12px; 
+	padding-right: 6px;
+}
+
+img.establishmentIcon {
+	height: 80px;
+	width: 80px;
+}
+
+/*Info at bottom of page*/
+#info p {
+	font-size: 14px; 
+	padding: 4px; 
+	line-height: 19px; 
+	font-weight: 300;
+}
+#info {
+	border-top: 4px #F8F8F8 solid;
+}
+
+/*Table style*/
+#beerTable {
+	cursor: pointer; 
+	background: transparent; 
+	overflow-x: auto; 
+	padding-bottom: 20px;
+}
+#beerTable table {
+	min-width: 900px;
+}
+#beerTable .tHeader:hover {
+	color: #1DE9B6;
+}
+.tHeader::after {
+	content: " \2193 \2191 "; 
+	font-size: 10px; 
+	padding-left: 3px;
+}
+.beerRow:hover {
+	color: #1DE9B6;
+}
+.beerRow {
+	border-left: 3px solid #ff00ff;
+}
+.hideRow {
+	display: none;
+}
+.selectedRow {
+	color: #1DE9B6;
+}
+
+/*Style based on screen width*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 1024px) {
+  body {
+  	border: 20px #F8F8F8 solid; 
+  	margin: 0px; 
+  	padding: 20px 20px 80px 20px;
+  }
+  #tableFilter, .clear, .resetMap {
+  	display: none;
+  }
+  /*#wrapper {
+  	max-width: 460px; 
+  	padding-top: 20px;
+  }*/
+  #beerTable, #map {
+  	min-width: 224px;
+  }
+}
+

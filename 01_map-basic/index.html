@@ -2,7 +2,7 @@
     <head>
     
     <!-- Meta  -->
-        <title>Lexington Beer Establishments</title>
+        <title>Spreadsheet Sorcery: 01_map-basic</title>
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -12,30 +12,24 @@
 
     </head>
 <body>
-
 <!-- Main HTML structure -->
     <div id="wrapper">
-        <h1>Lexington Area Beer Establishments</h1>
-        
-        <!-- info pane for our selected beer place and the map -->
+        <h1>Lexington Area Beer Establishments</h1>        
         <div class="container">
             <div id="infoPane">
-                <!-- This looks empty but we'll use a template with same ID to populate it! -->
                 <div id="selectedBeer"></div>
+                <i>Info about selected establishment will go here</i>
             </div>
             <div id="map"></div>
         </div>
 
-        <!-- Table, table filter, and associated buttons -->
         <div class="container">
             <input id="tableFilter" type="text" placeholder="filter by.."></input>
             | <span class="clear">Clear</span> | <span class="resetMap">Reset Map</span> |
             <br>
             <span class="noMatches">no matches</span>
-            <!-- This looks empty but we'll use a template with same ID to populate it! -->
-            <div id="beerTable"></div>
+            <div id="beerTable"><i>List of establishments will go here</i></div>
         </div>
-        <!-- Some info about our map, where it came from, data attribution, etc. -->
         <div id="info" class="container">
             <h3>About the map</h3>
             <p>Data for this map were collected from <a href="http://www.lexbeerscene.com/" target="_blank">LexBeerScene.com's</a> directory of <a href="http://www.lexbeerscene.com/localestablishments" target="_blank">local beer establishments</a>. You can access the Google Spreadsheet of the data <a href="https://docs.google.com/spreadsheets/d/13Xd93PIiGvGh2JQ6uygnsUTTLAlJu7F7TE-doTy-5OY/edit#gid=1993162178" target="_blank">here</a></p>
@@ -44,38 +38,7 @@
         </div>
     </div><!-- end wrapper -->
 
-<!-- Handlebar templates -->
-
-    <!-- Info pane for selected spot -->
-    <script id="selectedBeer" type="text/html">
-        {{#rows}}
-            <h4>SELECTED SPOT</h4>
-            <img class="establishmentIcon" src="{{icon}}">
-            <h2>{{name}}</h2>
-            <p>{{address}}<p>
-            <p>{{city}}{{#state}}, {{state}}{{/state}}{{#zip}} {{zip}}{{/zip}}</p>
-            <ul>
-                {{#website}}<li><span class="category"><a href="{{website}}" target="_blank">Website</a></span></li>{{/website}}
-                {{#phone}}<li><span class="category">Phone:</span> {{phone}}</li>{{/phone}}
-                {{#taps}}<li><span class="category"># of Taps:</span> {{taps}}</li>{{/taps}}
-                {{#food}}<li><span class="category">Food ?:</span> {{food}}</li>{{/food}}
-            </ul>
-        {{/rows}}
-    </script> 
-
-    <!-- Table -->
-    <script id="beerTable" type="text/html">
-        <table>
-            <tr><th class="tHeader">Name</th><th class="tHeader">City</th><th class="tHeader">Type</th></tr>
-            {{#rows}}
-                <tr id="{{rowNumber}}" class="beerRow"><td>{{name}}</td><td>{{city}}</td><td>{{type}}</td></tr>
-            {{/rows}}
-        </table>
-    </script>
-         
-
     <!-- Libraries -->
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src='js/tabletop1.3.4.js'></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
